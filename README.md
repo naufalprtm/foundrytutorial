@@ -1,5 +1,10 @@
-# foundrytutorial
+# foundry tutorial
  Berikut adalah tutorial untuk menggunakan Foundry dalam membuat Proof of Concept (PoC) terhadap bug leads. Tutorial ini mencakup langkah-langkah instalasi, konfigurasi, penggunaan remappings, dan pengujian PoC. Tutorial ini juga memberikan petunjuk untuk membuat PoC untuk bug yang sebenarnya.
+ 
+ ### Buat folder baru
+buat folder baru silakan buat degnan nama foundrytest
+ 
+
 
 
  ###  Instalasi dan Konfigurasi Awal
@@ -50,13 +55,33 @@ Jalankan perintah remappings:
 
         forge remappings
         
-aka akan muncul
+maka akan muncul
 
         StakingV3/=lib/StakingV3/
         ds-test/=lib/forge-std/lib/ds-test/src/
         forge-std/=lib/forge-std/src/
 
 Pastikan bahwa remappings mencakup direktori StakingV3/ dan @openzeppelin/.
+
+
+ ### sesuaikan versi solidity
+ pada folder src,test terdapat file berbeda
+ Counter.t.sol
+ Counter.s.sol
+ 
+##  Dalam struktur proyek Foundry, folder src dan test memiliki peran dan jenis file yang berberda antara Counter.t.sol dan Counter.s.sol:
+
+### Counter.t.sol:
+
+#### Lokasi: Biasanya berada di folder test. 
+ 
+#### Fungsi Utama: File ini digunakan untuk menulis dan menjalankan pengujian atau tes terhadap kontrak smart dalam proyek.
+
+### Counter.s.sol:
+
+#### Lokasi: Biasanya berada di folder src.
+ 
+#### Fungsi Utama: File ini digunakan untuk menuliskan dan mendefinisikan kontrak smart atau skrip yang akan dijalankan pada jaringan blockchain.
 
 ### Menggunakan Remappings
 Untuk menangani masalah dengan dependensi dari @openzeppelin, gunakan fitur remappings di Foundry. Buat file remappings.txt di root proyek dan tambahkan baris berikut
